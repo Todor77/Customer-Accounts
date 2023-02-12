@@ -24,7 +24,9 @@ public class AccountRepositoryImpl implements AccountRepository{
 
     @Override
     public Account createAccount(int customerId) {
-        return new Account(customerId);
+        Account account = new Account(customerId);
+        this.accounts.add(account);
+        return account;
     }
 
     @Override
@@ -33,8 +35,8 @@ public class AccountRepositoryImpl implements AccountRepository{
     }
 
     @Override
-    public Account findAccountById(int accountId) {
-        return accounts.stream().filter(account -> account.getAccountNumber() == accountId).findFirst().orElse(null);
+    public Account findAccountById(int customerId) {
+        return accounts.stream().filter(account -> account.getAccountNumber() == customerId).findFirst().orElse(null);
     }
 
     @Override

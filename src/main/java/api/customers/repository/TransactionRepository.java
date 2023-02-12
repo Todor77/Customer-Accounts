@@ -2,10 +2,11 @@ package api.customers.repository;
 
 
 import api.customers.entity.Transaction;
+import api.customers.entity.TransactionType;
 
 public interface TransactionRepository {
 
-    void addTransaction(String transactionId);
+    Transaction addTransaction(String transactionId, String description, double amount, TransactionType transactionType);
 
     void deleteTransaction(String transactionId);
 

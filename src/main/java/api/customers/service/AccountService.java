@@ -31,7 +31,8 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
-    public Optional<Account> findById (int accountId) {
-        return Optional.ofNullable(accountRepository.findAccountById(accountId));
+    public Optional<Account> getAccountByCustomerId (int customerId) {
+        return Optional.ofNullable(accountRepository.findAccountById(customerId));
     }
+
 }

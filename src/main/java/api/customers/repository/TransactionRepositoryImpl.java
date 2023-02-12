@@ -24,8 +24,10 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public void addTransaction(String transactionId) {
-
+    public Transaction addTransaction(String transactionId, String description, double amount, TransactionType transactionType) {
+        Transaction transaction = new Transaction("T" + System.currentTimeMillis(), description, amount, transactionType);
+        transactions.add(transaction);
+        return transaction;
     }
 
     @Override
@@ -35,7 +37,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
 
     @Override
     public Transaction findById(String transactionId) {
-        return null;
+        return transactions.stream().filter(transaction -> transaction.getTransactionId() == transactionId).findFirst().orElse(null);
     }
 
     @Override

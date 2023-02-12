@@ -49,7 +49,8 @@ public class CustomerService {
 
         customer.ifPresent(c -> {
             Account account = c.getAccount();
-            if (account == null) {
+            Optional<Account> account1 = accountService.getAccountByCustomerId(c.getCustomerId());
+            if (account1.isEmpty()) {
                 account = accountService.createAccount(customerId);
                 c.setAccount(account);
             }

@@ -17,6 +17,7 @@ public class TransactionService {
     }
 
     public void createTransaction(Account account, String description, double amount, TransactionType transactionType) {
-        account.addTransaction(new Transaction("T" + System.currentTimeMillis(), description, amount, transactionType));
+        Transaction transaction = transactionRepository.addTransaction("T" + System.currentTimeMillis(),  description,  amount,  transactionType);
+        account.addTransaction(transaction);
     }
 }
