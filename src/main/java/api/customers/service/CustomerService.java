@@ -40,7 +40,7 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    public Optional<Customer> findById (int customerId) {
+    public Optional<Customer> findById(int customerId) {
         return Optional.ofNullable(customerRepository.findCustomerById(customerId));
     }
 
