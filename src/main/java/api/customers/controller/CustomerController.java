@@ -11,6 +11,6 @@ public class CustomerController {
 
     @GetMapping("/customers")
     public List<Customer> getAllCustomers() {
-        return Collections.singletonList(new Customer(1));
+        return Collections.singletonList(new Customer());
     }
 }
