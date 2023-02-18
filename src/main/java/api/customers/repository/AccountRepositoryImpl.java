@@ -19,7 +19,14 @@ public class AccountRepositoryImpl implements AccountRepository{
         account.addTransaction(new Transaction("T0010", "Salary", 2000, TransactionType.BUY));
         account.addTransaction(new Transaction("T0020", "Shopping", 200, TransactionType.BUY));
         account.addTransaction(new Transaction("T0030", "Shopping Sell", 200, TransactionType.SELL));
+
+        Account account1 = new Account(1);
+        account1.addTransaction(new Transaction("T0001", "Salary", 5000, TransactionType.BUY));
+        account1.addTransaction(new Transaction("T0002", "Shopping", 300, TransactionType.BUY));
+        account1.addTransaction(new Transaction("T0003", "Shopping Sell", 300, TransactionType.SELL));
+
         this.accounts.add(account);
+        this.accounts.add(account1);
     }
 
     @Override
