@@ -52,11 +52,11 @@ public class CustomerService {
             Optional<Account> account1 = accountService.getAccountByCustomerId(c.getCustomerId());
             if (account1.isEmpty()) {
                 account = accountService.createAccount(customerId);
-                c.setAccount(account);
             }
             if(initialCredit != 0) {
                 accountService.addTransaction(account, "Initial Credit", initialCredit, TransactionType.INITIAL);
             }
+            c.setAccount(account);
         });
     }
 }
